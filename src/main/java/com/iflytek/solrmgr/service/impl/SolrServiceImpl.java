@@ -18,13 +18,4 @@ public class SolrServiceImpl implements SolrService {
 	@Autowired
 	private TUserTempDao tUserTempDao;
 
-	@Override
-	public List<UserVo> getAllUser() {
-		List<TUserTemp> list = this.tUserTempDao.getAll();
-		for (TUserTemp tUserTemp : list) {
-			System.out.println(tUserTemp);
-		}
-		return null;
-	}
-
 }

@@ -10,11 +10,11 @@ import org.apache.solr.client.solrj.impl.CloudSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
-import org.apache.solr.common.cloud.OnReconnect;
 import org.apache.solr.common.cloud.SolrZkClient;
 import org.apache.solr.common.cloud.ZkConfigManager;
 
 import com.iflytek.solrmgr.util.HttpRequestUtil;
+import com.iflytek.solrmgr.util.SolrUtil;
 import com.iflytek.solrmgr.util.StringUtil;
 
 public class TestSolr {
@@ -40,7 +40,7 @@ public class TestSolr {
 
 	public static void uploadConf() {
 		TestSolr ts = new TestSolr();
-		SolrZkClient zkClient = ts.createZkClient();
+		SolrZkClient zkClient = SolrUtil.createZkClient();
 		ts.uploadConfBySolrZkClient(zkClient, "D:\\iflytek\\qbpt\\config\\monitor-web\\conf", "test");
 	}
 
@@ -56,15 +56,6 @@ public class TestSolr {
 		}
 	}
 
-	public SolrZkClient createZkClient() {
-		String zkServerAddress = "172.16.246.27:2182,172.16.246.30:2182,172.16.246.31:2182";
-		SolrZkClient zkClient = new SolrZkClient(zkServerAddress, 30000, 30000, new OnReconnect() {
-			@Override
-			public void command() {
-			}
-		});
-		return zkClient;
-	}
 
 	public int createCompositeIdCollection(String name, String numShards, String replicationFactor,
 			String maxShardsPerNode, String configName) {

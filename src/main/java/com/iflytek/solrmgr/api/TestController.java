@@ -18,10 +18,6 @@ public class TestController {
 
 	@RequestMapping("/hello")
 	public String hello() {
-		List<UserVo> list = solrService.getAllUser();
-		for (UserVo userVo : list) {
-			System.out.println(userVo.getRymc());
-		}
 		return "/test/hello";
 	}
 }
