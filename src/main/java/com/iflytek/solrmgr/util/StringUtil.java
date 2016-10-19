@@ -1,7 +1,5 @@
 package com.iflytek.solrmgr.util;
 
-import com.google.gson.Gson;
-
 public class StringUtil {
 
 	/**

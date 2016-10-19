@@ -8,8 +8,7 @@ import org.hibernate.transform.ResultTransformer;
  * 
  * @author xkfeng@iflytek.com
  */
-public class ResultTransformers
-{
+public class ResultTransformers {
 
 	/**
 	 * 
@@ -24,8 +23,7 @@ public class ResultTransformers
 	 * @history
 	 */
 	@SuppressWarnings("rawtypes")
-	public static ResultTransformer aliasToBean(Class target)
-	{
+	public static ResultTransformer aliasToBean(Class target) {
 		return new AliasToBeanResultTransformer(target);
 	}
 }

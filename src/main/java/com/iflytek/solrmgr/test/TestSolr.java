@@ -20,28 +20,28 @@ import com.iflytek.solrmgr.util.StringUtil;
 public class TestSolr {
 
 	public static void main(String[] args) {
-		// uploadConf();
-		// createCollection();
-		// deleteCollection();
-		query();
+//		 uploadConf();
+//		 createCollection();
+//		 deleteCollection();
+//		query();
 	}
 
 	public static void createCollection() {
 		TestSolr ts = new TestSolr();
-		ts.createCompositeIdCollection("test1", "3", "3", null, "test");
+		ts.createCompositeIdCollection("xf", "3", "3", null, "xf");
 	}
 
 	public static void deleteCollection() {
 		String url = "http://172.16.246.30:8001/solr/admin/collections";
-		String para = "action=CREATE";
-		para += "&name=test";
+		String para = "action=DELETE";
+		para += "&name=xf";
 		String sr = HttpRequestUtil.sendGet(url, para);
 	}
 
 	public static void uploadConf() {
 		TestSolr ts = new TestSolr();
 		SolrZkClient zkClient = SolrUtil.createZkClient();
-		ts.uploadConfBySolrZkClient(zkClient, "D:\\iflytek\\qbpt\\config\\monitor-web\\conf", "test");
+		ts.uploadConfBySolrZkClient(zkClient, "D:\\iflytek\\qbpt\\config\\monitor-web\\conf_xf", "xf");
 	}
 
 	public void uploadConfBySolrZkClient(SolrZkClient zkClient, String confDir, String confName) {
