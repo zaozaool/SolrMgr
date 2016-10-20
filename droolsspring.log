@@ -1,1 +1,3 @@
 [ERROR][2016-10-19 09:34:18,842][com.iflytek.solrmgr.util.HttpRequestUtil]发送GET请求出现异常！Server returned HTTP response code: 400 for URL: http://172.16.246.30:8001/solr/admin/collections?action=CREATE&name=xf
+[ERROR][2016-10-20 10:21:41,268][com.iflytek.solrmgr.util.HttpRequestUtil]发送GET请求出现异常！Server returned HTTP response code: 400 for URL: http://172.16.246.30:8001/solr/admin/collections?action=DELETE&name=test1
+[ERROR][2016-10-20 10:22:00,536][com.iflytek.solrmgr.util.HttpRequestUtil]发送GET请求出现异常！Server returned HTTP response code: 400 for URL: http://172.16.246.30:8001/solr/admin/collections?action=DELETE&name=test1

@@ -1,0 +1,107 @@
+<dataConfig>
+  <dataSource name="jdbc"
+			  type="JdbcDataSource" 
+              driver="oracle.jdbc.driver.OracleDriver"
+              url="jdbc:oracle:thin:@192.168.201.34:1521:test" 
+              user="U_XF_BD" 
+              password="zxcvbnm!1"/>
+  <document>
+    <entity name="RY" dataSource="jdbc"
+		query="SELECT 'RY' AS DATA_S_TYPE,('RY-' || PC.ID) AS ID,PC.ZDRYBH,PC.XM,PC.XBDM,XBZD.MC AS XBDMMC,PC.SFZH,PC.MZDM,MZZD.MC AS MZDMMC,PC.HJDPCS,PC.HJQH,PC.HJQXZ,PC.ZRR,PC.ZRRMC,PC.ZRRXZQHID,PC.ZRRDWDM,ZRRDWDMZD.NAME AS ZRRDWDMMC,PC.ZRRLXFS,PC.LRSJ,PC.SFZRR,PC.GXR,PC.GXRMC,PC.GXRLXFS,PC.GXRSSJGDM,GXRSSJGDMZD.NAME AS GXRSSJGDMMC,PC.GXSJ,PC.SCBS,       PCE.ZZMMDM,ZZMMZD.MC  AS ZZMMDMMC,PCE.WHCDDM,WHCDZD.MC  AS WHCDDMMC,PCE.XQAH,PCE.KY,PCE.CSRQ,PCE.HYDM,HYZD.MC AS HYDMMC,PCE.SG,PCE.TZ,PCE.TMTZ,PCE.XXDM,XXZD.MC AS XXDMMC,PCE.ZY,PCE.GZDWXZ,PCE.XJZDQH,PCE.XZDXZ,PCE.CJYY  FROM T_PVBDP_PERSON_COLLECTION PC  LEFT JOIN T_PVBDP_PERSON_COLLECTION_EXT PCE    ON PC.ZDRYBH = PCE.ZDRYBH  LEFT JOIN T_PVBDP_ZD XBZD    ON XBZD.DM = PC.XBDM   AND XBZD.LXJP = 'XB'  LEFT JOIN T_PVBDP_ZD MZZD    ON MZZD.DM = PC.MZDM   AND MZZD.LXJP = 'MZ'  LEFT JOIN T_PVBDP_ZD ZZMMZD    ON ZZMMZD.DM = PCE.ZZMMDM   AND ZZMMZD.LXJP = 'ZZMM'  LEFT JOIN T_PVBDP_ZD WHCDZD    ON WHCDZD.DM = PCE.WHCDDM   AND WHCDZD.LXJP = 'WHCD' LEFT JOIN T_PVBDP_ZD HYZD    ON HYZD.DM = PCE.HYDM   AND HYZD.LXJP = 'HYZK'  LEFT JOIN T_PVBDP_ZD XXZD    ON XXZD.DM = PCE.XXDM   AND XXZD.LXJP = 'XX'  LEFT JOIN U_UAAC.T_UAAC_ORGANIZATION ZRRDWDMZD    ON ZRRDWDMZD.CODE = PC.ZRRDWDM AND ZRRDWDMZD.DELETE_STATE = 0  LEFT JOIN U_UAAC.T_UAAC_ORGANIZATION GXRSSJGDMZD    ON GXRSSJGDMZD.CODE = PC.GXRSSJGDM AND GXRSSJGDMZD.DELETE_STATE = 0">
+
+		<field column="DATA_S_TYPE" name="DATA_S_TYPE"/>
+		<field column="ID" name="ID"/>
+		<field column="ZDRYBH" name="DATA_S_ZDRYBH"/>
+		<field column="XM" name="DATA_S_XM"/>
+		<field column="XBDM" name="DATA_S_XBDM"/>
+		<field column="XBDMMC" name="DATA_S_XBDMMC"/>
+		<field column="SFZH" name="DATA_S_SFZH"/>
+		<field column="MZDM" name="DATA_S_MZDM"/>
+		<field column="MZDMMC" name="DATA_S_MZDMMC"/>
+		<field column="HJDPCS" name="DATA_S_HJDPCS"/>
+		<field column="HJQH" name="DATA_S_HJQH"/>
+		<field column="HJQXZ" name="DATA_S_HJQXZ"/>
+		<field column="ZRR" name="DATA_S_ZRR"/>
+		<field column="ZRRMC" name="DATA_S_ZRRMC"/>
+		<field column="ZRRXZQHID" name="DATA_S_ZRRXZQHID"/>
+		<field column="ZRRDWDM" name="DATA_S_ZRRDWDM"/>
+		<field column="ZRRDWDMMC" name="DATA_S_ZRRDWDMMC"/>
+		<field column="ZRRLXFS" name="DATA_S_ZRRLXFS"/>
+		<field column="LRSJ" name="DATA_S_LRSJ"/>
+		<field column="SFZRR" name="DATA_S_SFZRR"/>
+		<field column="GXR" name="DATA_S_GXR"/>
+		<field column="GXRMC" name="DATA_S_GXRMC"/>
+		<field column="GXRLXFS" name="DATA_S_GXRLXFS"/>
+		<field column="GXRSSJGDM" name="DATA_S_GXRSSJGDM"/>
+		<field column="GXRSSJGDMMC" name="DATA_S_GXRSSJGDMMC"/>
+		<field column="GXSJ" name="DATA_S_GXSJ"/>
+		<field column="SCBS" name="DATA_S_SCBS"/>
+		<field column="ZZMMDM" name="DATA_S_ZZMMDM"/>
+		<field column="ZZMMDMMC" name="DATA_S_ZZMMDMMC"/>
+		<field column="WHCDDM" name="DATA_S_WHCDDM"/>
+		<field column="WHCDDMMC" name="DATA_S_WHCDDMMC"/>
+		<field column="XQAH" name="DATA_S_XQAH"/>
+		<field column="KY" name="DATA_S_KY"/>
+		<field column="CSRQ" name="DATA_S_CSRQ"/>
+		<field column="HYDM" name="DATA_S_HYDM"/>
+		<field column="HYDMMC" name="DATA_S_HYDMMC"/>
+		<field column="SG" name="DATA_S_SG"/>
+		<field column="TZ" name="DATA_S_TZ"/>
+		<field column="TMTZ" name="DATA_S_TMTZ"/>
+		<field column="XXDM" name="DATA_S_XXDM"/>
+		<field column="XXDMMC" name="DATA_S_XXDMMC"/>
+		<field column="ZY" name="DATA_S_ZY"/>
+		<field column="GZDWXZ" name="DATA_S_GZDWXZ"/>
+		<field column="XJZDQH" name="DATA_S_XJZDQH"/>
+		<field column="XZDXZ" name="DATA_S_XZDXZ"/>
+		<field column="CJYY" name="DATA_S_CJYY"/>
+    </entity>
+	
+	<entity name="SJ" dataSource="jdbc"
+		query="SELECT 'SJ' AS DATA_S_TYPE,('SJ-' || EV.ID) AS ID,EV.SJBH,EV.BT,EV.JJCD,EV.XXLY,EV.SJFSSJ,EV.SJJSSJ,EV.SFDD,EV.SSYYDM,SSYYZD.MC AS SSYYDMMC,EV.XXLYKKX,EV.NRZSX,EV.SSZT,EV.ZRDW,EV.SFSQ,EV.SFST,EV.SJRS,EV.JJSS,EV.SQDX,EV.BXXS,EV.GJC,EV.CZJG,EV.ZW,EV.BZR,EV.BZRMC,EV.XZQHID,EV.BZRSSZZJG,BZRSSZZJGZD.NAME AS BZRSSZZJGMC,EV.BZRLXDH,EV.SJLY,EV.LRSJ,EV.FSJBH,EV.YXX,EV.PX FROM T_PVBDP_EVENT_COLLECTION EV LEFT JOIN T_PVBDP_ZD SSYYZD ON SSYYZD.DM = EV.SSYYDM AND SSYYZD.LXJP LIKE 'SSYY%' LEFT JOIN U_UAAC.T_UAAC_ORGANIZATION BZRSSZZJGZD ON BZRSSZZJGZD.CODE = EV.BZRSSZZJG AND BZRSSZZJGZD.DELETE_STATE = 0">
+
+		<field column="DATA_S_TYPE" name="DATA_S_TYPE"/>
+		<field column="ID" name="ID"/>
+		<field column="SJBH" name="DATA_S_SJBH"/>
+		<field column="BT" name="DATA_S_BT"/>
+		<field column="JJCD" name="DATA_S_JJCD"/>
+		<field column="XXLY" name="DATA_S_XXLY"/>
+		<field column="SJFSSJ" name="DATA_S_SJFSSJ"/>
+		<field column="SJJSSJ" name="DATA_S_SJJSSJ"/>
+		<field column="SFDD" name="DATA_S_SFDD"/>
+		<field column="SSYYDM" name="DATA_S_SSYYDM"/>
+		<field column="SSYYDMMC" name="DATA_S_SSYYDMMC"/>
+		<field column="XXLYKKX" name="DATA_S_XXLYKKX"/>
+		<field column="NRZSX" name="DATA_S_NRZSX"/>
+		<field column="SSZT" name="DATA_S_SSZT"/>
+		<field column="ZRDW" name="DATA_S_ZRDW"/>
+		<field column="SFSQ" name="DATA_S_SFSQ"/>
+		<field column="SFST" name="DATA_S_SFST"/>
+		<field column="SJRS" name="DATA_S_SJRS"/>
+		<field column="JJSS" name="DATA_S_JJSS"/>
+		<field column="SQDX" name="DATA_S_SQDX"/>
+		<field column="BXXS" name="DATA_S_BXXS"/>
+		<field column="GJC" name="DATA_S_GJC"/>
+		<field column="CZJG" name="DATA_S_CZJG"/>
+		<field column="ZW" name="DATA_S_ZW"/>
+		<field column="BZR" name="DATA_S_BZR"/>
+		<field column="BZRMC" name="DATA_S_BZRMC"/>
+		<field column="XZQHID" name="DATA_S_XZQHID"/>
+		<field column="BZRSSZZJG" name="DATA_S_BZRSSZZJG"/>
+		<field column="BZRSSZZJGMC" name="DATA_S_BZRSSZZJGMC"/>
+		<field column="BZRLXDH" name="DATA_S_BZRLXDH"/>
+		<field column="BZR" name="DATA_S_ZRR"/>
+		<field column="BZRMC" name="DATA_S_ZRRMC"/>
+		<field column="XZQHID" name="DATA_S_ZRRXZQHID"/>
+		<field column="BZRSSZZJG" name="DATA_S_ZRRDWDM"/>
+		<field column="BZRSSZZJGMC" name="DATA_S_ZRRDWDMMC"/>
+		<field column="SJLY" name="DATA_S_SJLY"/>
+		<field column="LRSJ" name="DATA_S_LRSJ"/>
+		<field column="FSJBH" name="DATA_S_FSJBH"/>
+		<field column="YXX" name="DATA_S_YXX"/>
+		<field column="PX" name="DATA_S_PX"/>
+
+    </entity>
+	
+  </document>
+</dataConfig> 	
